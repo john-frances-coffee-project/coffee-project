@@ -11,24 +11,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Atma:wght@600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-
+<!--        links for fonts, bootstrap, javascript, and favicon-->
 </head>
 <body>
+
+<!--        container made for the main heading with images of codey in a cup       -->
 <div class="container-fluid rounded-3 p px-0 my-0 text-center " id="main-heading">
     <header class="my-5 bg-light bg-opacity-75"><img src="img/duck-ina-cup.png" alt="duck in a cup"> Codey Coffee Co.<img src="img/duck-ina-cup.png" alt="duck in a cup"></header>
     </div>
 
+<!--        horizontal rule     -->
 <div class="hr m-5">
     <hr>
 </div>
+
+<!--        video tags for background video that loops and autoplays        -->
 <video autoplay muted loop class="coffee-beans">
     <source src="img/pexels-cristian-rojas-7487666.mp4">
-
 </video>
+
+<!--        div container with stuff class tag to link to css       -->
 <div class="stuff container ">
 
     <div class="row" >
 
+<!--        structure of coffee names and roast tags        -->
         <div class="text-nowrap col-6">
             <div id="coffees" style="column-count: 2" class = "coffees bg-light bg-opacity-75">
                 <h5> Coffee Name</h5>
@@ -38,6 +45,7 @@
 
         <div class="coffees col-6 text-nowrap bg-light bg-opacity-75">
             <form>
+<!--                roast selection and options             -->
                 <h6>Roast</h6>
                 <label for="roast-selection"></label>
                 <select id="roast-selection" style="width: 100%;">
@@ -49,8 +57,10 @@
                 <div class="mt-3">
                     <h6>Coffee Name</h6>
                 </div>
+<!--                search bar for the coffee names; case-insensitive           -->
                 <input id="inp" type="text" placeholder="Search.." style="width: 100%;">
                 <br>
+<!--                submit button               -->
                 <input class="submit mt-3" type="submit" style="width: 100%; color: white; background-color: cornflowerblue; border: none; border-radius: 7px">
 
             </form>
@@ -61,7 +71,7 @@
 
 
 
-
+<!--        script tags for js and for bootstrap bundle         -->
 <script src="main.js"></script>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>

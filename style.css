@@ -1,11 +1,7 @@
-/** {*/
-/*    font-family: 'Combo', cursive;*/
-/*}*/
 
 header {
     font-family: 'Atma', cursive;
     font-size: 50px;
-
 }
 
 body {
@@ -27,7 +23,6 @@ body {
 .stuff h2,
 .stuff p {
     display: inline;
-    vertical-align: top;
     vertical-align: bottom;
     padding-left: .5em;
 }
