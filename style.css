@@ -1,3 +1,15 @@
 * {
     font-family: 'Combo', cursive;
 }
+
+.coffee-beans {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    object-fit: cover;
+    z-index: -1;
+}
