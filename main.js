@@ -3,7 +3,7 @@
 function renderCoffee(coffee) {
     var html = '<div class="coffee">';
     // html += '<td>' + coffee.id + '</td>';
-    html += '<h2>' + coffee.name + '</h2>';
+    html += '<h1>' + coffee.name + '</h1>';
     html += '<p>' + coffee.roast + '</p>';
     html += '</div>';
 
@@ -21,10 +21,24 @@ function renderCoffees(coffees) {
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
+    var selectedCoffee = input.value.toLowerCase();
     var filteredCoffees = [];
+    console.log(selectedCoffee === 'French');
     coffees.forEach(function(coffee) {
-        if (coffee.roast === selectedRoast) {
-            filteredCoffees.push(coffee);
+//The include function includes everything you type in and compares to the array??????
+        var coff = coffee.name.toLowerCase().includes(selectedCoffee.toLowerCase());
+//Are we going to filter by roast? No.
+        console.log(coffee.roast);
+//Whenever out selected roast is all, we are only going to filter by coffee name.
+        if (selectedRoast === 'all'){
+            if (coff) {
+                filteredCoffees.push(coffee);
+            }
+// Filters by COFFEE ROAST AND NAME
+        } else {
+            if (coffee.roast === selectedRoast && coff) {
+                filteredCoffees.push(coffee);
+            }
         }
     });
     tbody.innerHTML = renderCoffees(filteredCoffees);
@@ -50,8 +64,6 @@ var coffees = [
 ];
 
 coffees.reverse();
-Array.from(coffees);
-
 
 
 var tbody = document.querySelector('#coffees');
@@ -60,31 +72,6 @@ var roastSelection = document.querySelector('#roast-selection');
 
 tbody.innerHTML = renderCoffees(coffees);
 
-submitButton.addEventListener('click', updateCoffees);
 
-let submitButton2 = document.querySelector('#submit2');
-
-submitButton2.addEventListener('click', function (event){
-    alert('sup');
-})
-
-// function myFunction() {
-//     // Declare variables
-//     var input, filter, table, tr, td, i, txtValue;
-//     input = document.getElementById("myInput");
-//     filter = input.value.toUpperCase();
-//     table = document.getElementById("myTable");
-//     tr = table.getElementsByTagName("tr");
-//     // Loop through all table rows, and hide those who don't match the search query
-//     for (i = 0; i < tr.length; i++) {
-//         td = tr[i].getElementsByTagName("td")[0];
-//         if (td) {
-//             txtValue = td.textContent || td.innerText;
-//             if (txtValue.toUpperCase().indexOf(filter) > -1) {
-//                 tr[i].style.display = "";
-//             } else {
-//                 tr[i].style.display = "none";
-//             }
-//         }
-//     }
-// }
+const input = document.querySelector('#inp');
+input.addEventListener('input', updateCoffees);
