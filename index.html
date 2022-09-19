@@ -2,49 +2,57 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Coffee Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Coffee!</h1>
+<div class="header text-center my-5">
+    <h1>Coffee!</h1>
+</div>
 
-<form>
-    <input id="inp" type="text" placeholder="Search..">
-    <label for="roast-selection"></label>
-    <select id="roast-selection">
-        <option>all</option>
-        <option>light</option>
-        <option>medium</option>
-        <option>dark</option>
-    </select>
-</form>
+<div class="hr m-5">
+    <hr>
+</div>
 
-<!--    <table>-->
-<!--        <thead>-->
-<!--            <tr>-->
-<!--&lt;!&ndash;                <th>ID</th>&ndash;&gt;-->
-<!--                <th>NAME</th>-->
-<!--                <th>ROAST</th>-->
-<!--            </tr>-->
-<!--        </thead>-->
-<!--        <tbody id="coffees"></tbody>-->
-<!--    </table>-->
+<div class="container">
 
+    <div class="row" >
 
+        <div class="text-wrap col-6">
+            <div id="coffees" style="column-count: 2">
+                <h3> Coffee Name</h3>
+                <p>Roast</p>
+            </div>
+        </div>
 
-<div id="coffees">
-    <h3> Coffee Name</h3>
-    <p>Roast</p>
+        <div class="col-6">
+            <form>
+                <h5>Roast</h5>
+                <label for="roast-selection"></label>
+                <select id="roast-selection" style="width: 100%;">
+                    <option>all</option>
+                    <option>light</option>
+                    <option>medium</option>
+                    <option>dark</option>
+                </select>
+                <h5>Coffee Name</h5>
+                <input id="inp" type="text" placeholder="Search.." style="width: 100%;">
+                <br>
+                <input type="submit" style="width: 100%; color: white; background-color: cornflowerblue; border: none; border-radius: 7px">
+
+            </form>
+        </div>
+    </div>
 </div>
 
 
-<!--    <div id="coffees">-->
-<!--        <div>NAME</div>-->
-<!--        <div>ROAST</div>-->
-<!--    </div>-->
+
 
 <script src="main.js"></script>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
 </html>
 
 <!-- eh dyude   -->
