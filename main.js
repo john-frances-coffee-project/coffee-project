@@ -66,6 +66,23 @@ var coffees = [
 coffees.reverse();
 
 
+
+function addCoffee(e) {
+    e.preventDefault();
+    let newCoffee = {
+        id : coffees.length + 1,
+        name : coffeeName.value,
+        roast : roastAdd.value
+    }
+    coffees.push(newCoffee)
+}
+
+let coffeeName = document.querySelector('#userInput');
+let roastAdd = document.querySelector('#roast-selection2');
+let submitButton2 = document.querySelector('#submit2');
+submitButton2.addEventListener('click', addCoffee);
+
+
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
@@ -75,3 +92,5 @@ tbody.innerHTML = renderCoffees(coffees);
 
 const input = document.querySelector('#inp');
 input.addEventListener('input', updateCoffees);
+
+
