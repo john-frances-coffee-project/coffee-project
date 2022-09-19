@@ -1,5 +1,7 @@
 "use strict"
 
+//Here, we changed the tags to refer to the html file. Before, they referred to the table, now they refer to the h2
+// and p tags.
 function renderCoffee(coffee) {
     var html = '<div class="coffee">';
     // html += '<td>' + coffee.id + '</td>';
@@ -10,6 +12,7 @@ function renderCoffee(coffee) {
     return html;
 }
 
+//We did not touch this code
 function renderCoffees(coffees) {
     var html = '';
     for(var i = coffees.length - 1; i >= 0; i--) {
@@ -18,23 +21,24 @@ function renderCoffees(coffees) {
     return html;
 }
 
+
+
 function updateCoffees(e) {
-    e.preventDefault(); // don't submit the form, we just want to update the data
+    e.preventDefault();
     var selectedRoast = roastSelection.value;
     var selectedCoffee = input.value.toLowerCase();
     var filteredCoffees = [];
     console.log(selectedCoffee === 'French');
+//This function looks at everything that is typed in and loops through the array to compare it
     coffees.forEach(function(coffee) {
-//The include function includes everything you type in and compares to the array??????
+//We made it case-insensitive
         var coff = coffee.name.toLowerCase().includes(selectedCoffee.toLowerCase());
-//Are we going to filter by roast? No.
-        console.log(coffee.roast);
 //Whenever out selected roast is all, we are only going to filter by coffee name.
         if (selectedRoast === 'all'){
             if (coff) {
                 filteredCoffees.push(coffee);
             }
-// Filters by COFFEE ROAST AND NAME
+//Below, we are using this part to filter by coffee roast AND name
         } else {
             if (coffee.roast === selectedRoast && coff) {
                 filteredCoffees.push(coffee);
@@ -63,16 +67,17 @@ var coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
+//Here, we sorted the IDs in reverse order
 coffees.reverse();
 
 
 var tbody = document.querySelector('#coffees');
-var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
 
 tbody.innerHTML = renderCoffees(coffees);
 
 
+//This is the eventListener that changes the names on the coffee based on each key that is typed in.
 const input = document.querySelector('#inp');
 input.addEventListener('input', updateCoffees);
 roastSelection.addEventListener('change', updateCoffees)
