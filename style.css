@@ -1,10 +1,3 @@
-table {
-    border-collapse: collapse;
-    margin: 15px 0;
+* {
+    font-family: 'Combo', cursive;
 }
-
-td, th {
-    border: 1px solid black;
-    padding: 5px 10px;
-}
-
