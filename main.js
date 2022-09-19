@@ -92,5 +92,6 @@ tbody.innerHTML = renderCoffees(coffees);
 
 const input = document.querySelector('#inp');
 input.addEventListener('input', updateCoffees);
+roastSelection.addEventListener('change', updateCoffees)
 
 
